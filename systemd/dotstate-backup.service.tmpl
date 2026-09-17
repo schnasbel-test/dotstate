@@ -1,0 +1,6 @@
+[Unit]
+Description=Commit and push dotfiles repo changes
+
+[Service]
+Type=oneshot
+ExecStart=__REPO_DIR__/backup.sh

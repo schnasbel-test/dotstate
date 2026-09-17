@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Blocks a commit if gitleaks finds a likely secret in the staged changes.
+#
+# Installed via `git config core.hooksPath githooks` (done by install.sh),
+# so it applies to manual commits as well as backup.sh's automatic ones.
+
+set -euo pipefail
+
+if ! command -v gitleaks >/dev/null 2>&1; then
+  echo "==> pre-commit: gitleaks not installed, skipping secret scan (see packages/pacman.common.txt)" >&2
+  exit 0
+fi
+
+if ! gitleaks protect --staged --redact -v; then
+  echo "==> pre-commit: gitleaks found a likely secret in the staged changes, commit blocked." >&2
+  echo "==> Fix it, or if this is a false positive, bypass once with: git commit --no-verify" >&2
+  exit 1
+fi

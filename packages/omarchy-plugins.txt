@@ -1,0 +1,7 @@
+# Third-party Omarchy shell plugins to install via `omarchy plugin add`.
+# One git URL per line; # comments and blank lines are ignored.
+#
+# Dotstate's own bar-widget plugin lives in plugin/ at this repo's root
+# and is added by pointing `omarchy plugin add` at this repo's own URL
+# once you've used it as a template - not listed here, since it can't
+# install itself.

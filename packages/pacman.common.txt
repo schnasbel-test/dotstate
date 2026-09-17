@@ -1,0 +1,8 @@
+# Native (pacman) packages installed on every machine, on top of a stock
+# Omarchy install. One package per line; # comments and blank lines are
+# ignored. Machine-specific extras go in packages/pacman.<hostname>.txt
+# instead (see README.md).
+#
+# gitleaks is required for the pre-commit secret scan (githooks/pre-commit)
+# to actually run rather than being silently skipped.
+gitleaks

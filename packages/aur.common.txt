@@ -1,0 +1,4 @@
+# AUR packages installed on every machine, on top of a stock Omarchy
+# install. One package per line; # comments and blank lines are ignored.
+# Machine-specific extras go in packages/aur.<hostname>.txt instead.
+# Empty by default - add your own.

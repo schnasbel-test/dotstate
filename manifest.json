@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "io.github.marcmeier.dotstate",
+  "name": "Dotstate",
+  "version": "1.0.0",
+  "author": "marcmeier",
+  "license": "MIT",
+  "description": "Guides first-time dotfiles setup and shows your sync status in the Omarchy bar, with one-click sync/drift/link-check actions.",
+  "kinds": ["bar-widget"],
+  "entryPoints": { "barWidget": "Panel.qml" },
+  "barWidget": {
+    "displayName": "Dotstate",
+    "description": "Dotfiles sync status and quick actions (sync now, check drift, check links).",
+    "category": "System",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "dotfilesRepo": "",
+      "refreshIntervalSec": 60
+    },
+    "schema": [
+      {
+        "key": "dotfilesRepo",
+        "type": "string",
+        "label": "Path to your dotfiles repo (e.g. ~/Projects/dotfiles)",
+        "defaultValue": ""
+      },
+      {
+        "key": "refreshIntervalSec",
+        "type": "integer",
+        "label": "Status refresh interval (seconds)",
+        "min": 10,
+        "max": 3600,
+        "step": 5,
+        "defaultValue": 60
+      }
+    ]
+  }
+}
